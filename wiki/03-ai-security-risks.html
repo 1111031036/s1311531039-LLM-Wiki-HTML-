@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 資訊安全 Wiki｜03-ai-security-risks</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#07101d;color:#e8f2ff;font:16px/1.85 system-ui,'Noto Sans TC',sans-serif}header{border-bottom:1px solid #1e3a55;background:#091729;padding:14px max(22px,calc((100% - 1000px)/2));position:sticky;top:0}header a{color:#63dfff;text-decoration:none;margin-right:18px;font-size:14px}main{max-width:1000px;margin:38px auto;padding:0 24px 70px}h1,h2,h3{color:#f4f9ff;line-height:1.4}h1{font-size:clamp(28px,4vw,42px)}h2{margin-top:36px;border-bottom:1px solid #24445f;padding-bottom:8px}a{color:#62dfff}p,li{color:#c4d4e5}blockquote{border-left:3px solid #36c9ee;padding:8px 18px;background:#0c2035;color:#bdd5e8}pre,code{background:#10243a;border-radius:6px}pre{padding:16px;overflow:auto}code{padding:2px 5px}table{border-collapse:collapse;width:100%;display:block;overflow:auto}th,td{border:1px solid #29445e;padding:10px;text-align:left}th{background:#102b43}hr{border:0;border-top:1px solid #29445e;margin:30px 0}.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{display:block;background:#0d2035;border:1px solid #244763;border-radius:12px;padding:18px;text-decoration:none}.card strong{display:block;color:#63dfff}.muted{color:#8fa8c0;font-size:14px}
+</style></head><body><header><a href="../index.html">專案首頁</a><a href="../presentation/index.html">教學簡報</a><a href="../wiki/index.html">Wiki</a><a href="../sources/index.html">研究來源</a><a href="../workflow/index.html">Workflow</a><a href="../reports/index.html">報告資料</a></header><main><h1>03｜AI 系統與 LLM 風險</h1>
+<h2>摘要</h2>
+<p>AI 應用有傳統軟體風險，也有資料、模型、提示與代理工具等新型風險。OWASP 的 LLM 風險清單可作為理解常見問題的起點。</p>
+<h2>代表性風險</h2>
+<ul>
+<li><strong>提示注入（Prompt Injection）</strong>：不可信輸入可能誘導模型偏離預期指示。應將外部內容視為資料而非可信命令，限制模型權限並隔離敏感操作。</li>
+<li><strong>敏感資訊揭露</strong>：使用者或系統可能將個資、機密或憑證帶入提示或輸出。應採資料最小化、遮蔽及存取控制。</li>
+<li><strong>供應鏈風險</strong>：模型、資料集、套件、外掛及託管服務都可能引入風險。應盤點依賴項並評估供應商。</li>
+<li><strong>資料與模型污染</strong>：不可靠或遭竄改的資料可能影響模型品質。應檢查來源、完整性及資料治理。</li>
+<li><strong>不安全輸出處理</strong>：模型輸出不可直接視為安全指令或可信程式內容；下游系統仍須驗證。</li>
+<li><strong>過度代理權限</strong>：讓 AI 代理擁有過多工具權限，可能造成非預期操作。採最小權限與人工核准。</li>
+<li><strong>錯誤資訊</strong>：模型可能產生看似合理但不正確的內容。重要決策需以可靠來源交叉查證。</li>
+<li><strong>資源消耗失控</strong>：缺乏限制可能造成成本、容量與服務可用性問題。設定配額、速率與監控。</li>
+</ul>
+<h2>風險思考框架</h2>
+<p>對每個 AI 使用情境，依序問：</p>
+<ol>
+<li>要保護什麼資產？</li>
+<li>哪些人或系統能接觸資料與模型？</li>
+<li>輸入、模型、輸出及外部工具可能在哪裡出問題？</li>
+<li>事件發生時會影響機密性、完整性或可用性嗎？</li>
+<li>有哪些預防、偵測、回應與復原措施？</li>
+</ol>
+<h2>安全邊界</h2>
+<p>本頁用於風險認識與防禦規劃，不提供未經授權的攻擊操作步驟。</p>
+<h2>參考來源</h2>
+<p>S01、S02、S05、S06。</p>
+<p class="muted">本頁由專案 Markdown 內容轉為瀏覽器可直接閱讀的 HTML。</p></main></body></html>
